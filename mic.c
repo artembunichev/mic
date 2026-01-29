@@ -81,7 +81,6 @@ bufloop()
 	while((arb = read(fd, &ibu, MXBFSZ)) > 0) {
 		if (accm)
 			ckdly();
-		
 		/*
 		 * The above call to `ckdly' may change the `accm', so we need
 		 * to have two identical if-s in a row.
@@ -100,7 +99,6 @@ bufloop()
 		/*
 		 * At this point we want to start unloading accumulated data.
 		 */
-		
 		if ((acc = realloc(acc, accsz = accl)) == NULL)
 			err(1, "realloc()");
 
