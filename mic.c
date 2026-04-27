@@ -38,7 +38,7 @@ struct timeval st; /* Start time (for tracking delay). */
  * Simple loop (without delay).
  */
 void
-simploop()
+simploop(void)
 {
 	while((arb = read(fd, &ibu, MXBFSZ)) > 0)
 		write(fd, &ibu, arb);
@@ -48,7 +48,7 @@ simploop()
  * Check delay.
  */
 void
-ckdly()
+ckdly(void)
 {
 	struct timeval now;
 	unsigned long diffmc; /* Difference in microseconds. */
@@ -65,7 +65,7 @@ ckdly()
  * Buffered loop (with delay).
  */
 void
-bufloop()
+bufloop(void)
 {
 	char* acc; /* Accumulator. */
 	int accsz; /* Accumulator total size. */
@@ -143,5 +143,5 @@ main(int argc, char** argv)
 	else
 		bufloop();
 
-	return 0;
+	return (0);
 }
